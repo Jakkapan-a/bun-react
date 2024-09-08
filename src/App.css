@@ -1,0 +1,157 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.card .answer {
+  margin: 10px;
+}
+
+.read-the-docs {
+  color: #ffffff;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
+
+.color-primary {
+  color: #D3D3D3;
+}
+
+.color-secondary {
+  color: #61dafb;
+}
+
+.color-tertiary {
+  color: #5d2ed4;
+}
+
+.color-quaternary {
+  color: #19296f;
+}
+
+.bg-primary {
+  color: #D3D3D3;
+}
+
+.bg-secondary {
+  color: #61dafb;
+}
+
+.bg-tertiary {
+  color: #5d2ed4;
+}
+
+.bg-quaternary {
+  color: #19296f;
+}
+
+.polygon-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background-color: #000000;
+}
+
+.polygon {
+  position: absolute;
+  background: #2a81de2c;
+  opacity: 0.85;
+  animation: movePolygon 10s infinite alternate ease-in-out, rotatePolygon 10s infinite linear;
+}
+
+.polygon1 {
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background: #615cef2c;
+  clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+}
+
+.polygon2 {
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 70%;
+  background: #3157c162;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.polygon3 {
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background: #19296f;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.polygon4 {
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background: #5d2ed4;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+/* Animation for rotating the polygons */
+@keyframes rotatePolygon {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+/* Animation for moving polygons left and right */
+@keyframes movePolygon {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(100px, 100px);
+  }
+}
