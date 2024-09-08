@@ -12,19 +12,18 @@ function App() {
   // const [users, setUsers] = useState<User[]>();
   const [users, setUsers] = useState<User | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
-  useEffect(() => {
-    fetchJoke();
-    
-  }, []);
 
-  const fetchJoke = async () => {
-    
+  const fetchJoke = async () => {    
     const response = await fetch(
       "https://official-joke-api.appspot.com/random_joke"
     );
     const data = await response.json();
     setUsers(data);
   };
+
+  useEffect(() => {
+    fetchJoke();
+  }, []);
 
   return (
     <>
