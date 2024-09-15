@@ -1,26 +1,26 @@
-# React + TypeScript + Bun
+# React + TypeScript + Bun + API Joke
 ## การใช้ React + TypeScript + Bun + docker ในการสร้างโปรเจค
 
 ขั้นตอนการติดตั้ง 
 1. git clone 
 ```bash
-git clone https://github.com/Jakkapan-a/bun-react
+git clone https://github.com/Jakkapan-a/bun-react-assign-2
 ```
 
 2. ทำการเข้าไปในโฟลเดอร์ bun-react
 ```bash
-cd bun-react
+cd bun-react-assign-2
 ```
 
 3. ทำการติดตั้ง package ที่จำเป็น
 ```bash
-bun instal
+bun install
 bun run build
 ```
 
 4. ทำการรันโปรเจค ด้วยคำสั่ง docker-compose up -d
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 5. ทำการเข้าเว็บไซต์
