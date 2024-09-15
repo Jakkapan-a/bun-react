@@ -1,0 +1,17 @@
+# nginx 
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_wen_react
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./dist:/usr/share/nginx/html
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: always
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
