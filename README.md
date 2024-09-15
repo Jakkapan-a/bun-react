@@ -1,6 +1,60 @@
 # React + TypeScript + Bun
-## โปรเจคนี้เป็นการเรียนรู้การใช้ React + TypeScript + Bun
-หลักการออกแบบ
+## การใช้ React + TypeScript + Bun + docker ในการสร้างโปรเจค
+
+ขั้นตอนการติดตั้ง 
+1. git clone 
+```bash
+git clone https://github.com/Jakkapan-a/bun-react
+```
+
+2. ทำการเข้าไปในโฟลเดอร์ bun-react
+```bash
+cd bun-react
+```
+
+3. ทำการติดตั้ง package ที่จำเป็น
+```bash
+bun instal
+bun run build
+```
+
+4. ทำการรันโปรเจค ด้วยคำสั่ง docker-compose up -d
+```bash
+docker-compose up -d
+```
+
+5. ทำการเข้าเว็บไซต์
+```bash
+http://localhost/
+```
+
+## อธิบายโครงสร้างโฟลเดอร์ docker-compose.yml
+```yml
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_wen_react
+    ports:
+      - "80:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: always
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
+```
+- ทำการใช้ image ของ nginx:alpine
+- ทำการ map port 80 ของเครื่อง host ไปยัง port 80 ของ container
+- ทำการใช้ volume ในการเชื่อมต่อ dist ของโฟลเดอร์ bun-react ไปยัง /usr/share/nginx/html ของ container
+- ทำการใช้ volume ในการเชื่อมต่อ nginx.conf ของโฟลเดอร์ bun-react ไปยัง /etc/nginx/nginx.conf ของ container
+- ทำการใช้ network ชื่อ mynetwork ในการเชื่อมต่อ container ทั้งหมด
+
+
+
+## หลักการออกแบบ
 1. ทำการเรียก API จะ https://official-joke-api.appspot.com/random_joke เพื่อเรียกค่า json ดังตัวอย่าง
 ```json
 {
@@ -86,13 +140,3 @@ useEffect(() => {
     {/*  Show Answer */}
     {showAnswer ? <p className="read-the-docs">{users && users.punchline}</p> : null}
 ```
-
-
-
-
-
-สมาชิก
-
-1. 66130030 จักรพันธ์ อัตลา
-2. 66130226 อรวรรณ  เห็นศิริศักด์
-3. 66130835 สุดารัตน์  ภู่ทอง
