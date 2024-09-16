@@ -28,7 +28,7 @@ docker compose up -d
 http://localhost/
 ```
 
-## อธิบายโครงสร้างโฟลเดอร์ docker-compose.yml
+## อธิบาย docker-compose.yml
 ```yml
 services:
   nginx:
