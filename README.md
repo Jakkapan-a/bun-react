@@ -26,6 +26,8 @@ docker compose up -d
 5. ทำการเข้าเว็บไซต์
 ```bash
 http://localhost/
+# หรือ aws cloud
+http://13.250.123.133/
 ```
 
 ## อธิบายโครงสร้างโฟลเดอร์ docker-compose.yml
