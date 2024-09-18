@@ -30,7 +30,7 @@ http://localhost/
 http://13.250.123.133/
 ```
 
-## อธิบายโครงสร้างโฟลเดอร์ docker-compose.yml
+## อธิบาย docker-compose.yml
 ```yml
 services:
   nginx:
